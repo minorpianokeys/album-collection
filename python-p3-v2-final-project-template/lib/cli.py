@@ -67,11 +67,11 @@ def albums_loop(artist):
         elif choice.isdigit():
             album = pick_album(artist, choice)
             if album:
-                album_loop(album, artist)
+                album_info_loop(album, artist)
         else:
             print("Invalid choice")
 
-def album_loop(album, artist):
+def album_info_loop(album, artist):
     while True:
         album_menu(album, artist)
         choice = input("> ")
@@ -126,8 +126,6 @@ def album_menu(album, artist):
     print(f"Type D to delete {album.name}")
     print(f"Type B to go back to {artist.name}'s albums")
     print("Type 0 to exit the program")
-
-
 
 if __name__ == "__main__":
     main()
