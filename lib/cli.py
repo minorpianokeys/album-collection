@@ -1,7 +1,4 @@
 # lib/cli.py
-from models.artist import Artist
-from models.album import Album
-
 from helpers import (
     create_artist,
     list_all_artists,

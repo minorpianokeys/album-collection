@@ -20,7 +20,7 @@ def list_all_artists():
         print(f"{i} - {artist.name}({artist.genre})")
 
 def list_albums(artist):
-    albums = Artist.albums(artist)
+    albums = artist.albums()
     if albums:
         for i, album in enumerate(albums, start=1):
             print(f"{i} - {album.name}({album.year})")
@@ -36,7 +36,7 @@ def pick_artist(choice):
         print("No artist found")
 
 def pick_album(artist, choice):
-    albums = Artist.albums(artist)
+    albums = artist.albums()
     if 0 < int(choice) <= len(albums):
         album = albums[int(choice) - 1]
         return album
@@ -76,7 +76,7 @@ def update_artist(artist):
 def delete_artist(artist):
     choice = input(f"Are you sure you want to delete {artist.name} and their albums? 'y' or 'n': ")
     if choice == "y":
-        albums = Artist.albums(artist)
+        albums = artist.albums()
         for album in albums:
             album.delete()
         artist.delete()
